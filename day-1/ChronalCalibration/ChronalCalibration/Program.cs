@@ -11,14 +11,18 @@ namespace ChronalCalibration
     {
         static void Main(string[] args)
         {
+            Console.Write("Set number of iterations: ");
+            //Iterations set in method FirstNumberTwice.
+
             var inputFilePath = @"C:\Users\joakim\repos\AoC-2018\day-1\ChronalCalibration\ChronalCalibration\Input.txt";
             var numbersAsStringArray = ParseInput(inputFilePath);
             var numbersAsIntArray = ToIntArray(numbersAsStringArray);
-            var Answer2 = FirstNumberTwice(numbersAsIntArray);
-            var Answer = AddisionOnIntArray(numbersAsIntArray);
-
-            Console.WriteLine("Answer to problem a: " + Answer);
-            Console.WriteLine("Answer to problem b: " + Answer2);
+            var answer2 = FirstNumberTwice(numbersAsIntArray);
+            var answer1 = AddisionOnIntArray(numbersAsIntArray);
+            
+            
+            Console.WriteLine("Answer to problem a: " + answer1);
+            Console.WriteLine("Answer to problem b: " + answer2);
             Console.ReadKey();
         }
 
@@ -29,7 +33,8 @@ namespace ChronalCalibration
             var last = 0;
             myList.Add(0);
             var sum = 0;
-            while (true)
+            int maxIterations = int.Parse(Console.ReadLine());
+            for (int i = 0;i < maxIterations ; i++)
             {
                 foreach(var y in intArray)
                 {
@@ -42,6 +47,8 @@ namespace ChronalCalibration
                     last = sum;
                 }
             }
+            Console.WriteLine("Could not calculate. Too few itarations or imposible senarion.");
+            return 0;
         }
 
         private static int AddisionOnIntArray(int[] intArray)
