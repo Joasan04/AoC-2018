@@ -14,7 +14,7 @@ namespace ChronalCalibration
             Console.Write("Set number of iterations: ");
             //Iterations set in method FirstNumberTwice.
 
-            var inputFilePath = @"C:\Users\joakim\repos\AoC-2018\day-1\ChronalCalibration\ChronalCalibration\Input.txt";
+            var inputFilePath = @"..\..\Input.txt";
             var numbersAsStringArray = ParseInput(inputFilePath);
             var numbersAsIntArray = ToIntArray(numbersAsStringArray);
             var answer2 = FirstNumberTwice(numbersAsIntArray);
